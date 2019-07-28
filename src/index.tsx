@@ -4,6 +4,6 @@ import './assets/stylesheets/style.scss';
 import { App } from "./components/app";
 
 ReactDOM.render(
-    <App compiler="TypeScript" framework="React" store="Hooks" />,
+    <App compiler="TypeScript" framework="React" store="Hooks (useContext & useReducer)" />,
     document.getElementById("root")
 );
