@@ -1,13 +1,13 @@
 import * as React from "react";
 import { Form } from 'react-bootstrap';
-import { Todo, ActionType, stateCtx } from "../store/todo.store";
+import { Todo, ActionType, todoContext } from "../store/todo.store";
 const uuidv4 = require('uuid/v4');
 
 
 export const TodoAdd: React.FC = (props) => {
     const [task, setTask] = React.useState<string>('');
     const [description, setDescription] = React.useState<string>('');
-    const [todos, dispatch] = React.useContext(stateCtx);
+    const [todos, dispatch] = React.useContext(todoContext);
     return (
         <div style={{ marginBottom: "40px" }}>
             <Form>

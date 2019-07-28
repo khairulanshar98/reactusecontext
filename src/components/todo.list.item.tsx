@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Alert, Button } from 'react-bootstrap';
-import { Todo, ActionType, stateCtx } from "../store/todo.store";
+import { Todo, ActionType, todoContext } from "../store/todo.store";
 interface TodoListItemProps {
     todo: Todo
 }
 
 export const TodoListItem: React.FC<TodoListItemProps> = (props) => {
-    const [todos, dispatch] = React.useContext(stateCtx);
+    const [todos, dispatch] = React.useContext(todoContext);
     const [show, setShow] = React.useState<boolean>(true);
     const [todo, setTodo] = React.useState<Todo>(props.todo);
     React.useEffect(() => {

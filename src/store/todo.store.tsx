@@ -38,12 +38,12 @@ export const reducer = (state: Todo[], action: IAction): Todo[] => {
 };
 
 
-export const stateCtx = React.createContext<[Todo[], React.Dispatch<IAction>]>([initialTodos, (() => 0)]);
+export const todoContext = React.createContext<[Todo[], React.Dispatch<IAction>]>([initialTodos, (() => 0)]);
 export const TodoListProvider: React.FC = (props) => {
   const [todos, dispatch] = React.useReducer(reducer, initialTodos);
   return (
-    <stateCtx.Provider value={[todos, dispatch]}>
+    <todoContext.Provider value={[todos, dispatch]}>
       {props.children}
-    </stateCtx.Provider>
+    </todoContext.Provider>
   );
 }

@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Row, Form } from 'react-bootstrap';
 import { TodoListItem } from './todo.list.item';
-import { Todo, stateCtx } from "../store/todo.store";
+import { Todo, todoContext } from "../store/todo.store";
 
 export const TodoList: React.FC = (props) => {
-    const [todos, dispatch] = React.useContext(stateCtx);
+    const [todos, dispatch] = React.useContext(todoContext);
     const [filter, setFilter] = React.useState<string>('');
     const [filtered, setFiltered] = React.useState<Todo[]>(todos);
 
